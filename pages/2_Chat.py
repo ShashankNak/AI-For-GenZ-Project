@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.title("Chat Bot")
+st.title("DocumentAI")
 
 chatbot = st.session_state.get("chatbot", None)
 

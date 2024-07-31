@@ -6,15 +6,15 @@ chatbot = ChatBot()
 
 
 st.set_page_config(
-    page_title="ChatBot",
+    page_title="DocumentAI",
     page_icon="🧊",
     layout="centered",
     initial_sidebar_state="expanded",
 )
 
-st.title("ChatBot App")
+st.title("Document Bot")
 
-st.write("Steps to use ChatBot: ")
+st.write("Steps to use Document Bot: ")
 st.write("1. Add API Key")
 st.write("2. Train Bot on Documents")
 st.write("3. Chat with Bot")

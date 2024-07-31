@@ -10,5 +10,7 @@ python -m venv venv
 ## 3. Select the interpreter as venv
 venv/Scripts/activate
 
+python.exe -m pip install --upgrade pip
+
 ## 3. Select the created environment and Install all the packages
 pip install -r requirements.txt

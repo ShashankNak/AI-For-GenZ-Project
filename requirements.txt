@@ -8,3 +8,4 @@ langchainhub
 langchain-openai
 sentence-transformers
 streamlit
+pypdf
