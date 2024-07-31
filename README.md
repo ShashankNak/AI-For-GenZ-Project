@@ -1,6 +1,5 @@
-# AI For GenZ Project
- This is the Project made in the AI For GenZ event Organized by Ahmedabad Developer Club and Code-O-Logic
-
+# Document AI Bot
+This is a AI chatbot which can be train on the documents and user can ask questions related to that documents.
 
 ## 1. Create the virtual Environment
 python -m venv venv
