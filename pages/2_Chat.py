@@ -4,7 +4,6 @@ st.title("DocumentAI")
 
 chatbot = st.session_state.get("chatbot", None)
 
-
 if chatbot is not None and (chatbot.pdfTrained or chatbot.docxTrained or chatbot.textTrained or chatbot.csvTrained or chatbot.jsonTrained or chatbot.excelTrained):
     st.subheader("Your model is Trained on the following files: ")
     if "docs" in st.session_state:

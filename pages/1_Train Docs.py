@@ -1,6 +1,7 @@
 import streamlit as st
 from pathlib import Path
 
+
 def storeSession(uploaded_file, chatbot):
     if "docs" not in st.session_state:
         st.session_state["docs"] = []
@@ -34,8 +35,7 @@ if chatbot is not None and chatbot.initialized:
             # Save uploaded file to 'F:/tmp' folder.
             save_folder = 'savedDocs/'
             save_path = Path(save_folder, uploaded_file.name)
-            
-            with open(save_path, mode='wb') as w:
+            with open(str(save_path), 'wb') as w:
                 w.write(uploaded_file.getvalue())
 
             file_types = {
@@ -50,7 +50,12 @@ if chatbot is not None and chatbot.initialized:
             file_type = uploaded_file.type
             if file_type in file_types:
                 extension, file_format = file_types[file_type]
-                getattr(chatbot, f"{extension}_data")(uploaded_file)
+                method = getattr(chatbot, f"{extension}_data", None)
+                if callable(method):
+                    method = getattr(chatbot, f"{extension}_data")
+                    method(uploaded_file)
+                else:
+                    st.error(f"Chatbot does not support {file_format} files.")
                 storeSession(uploaded_file, chatbot)
                 st.success(f"{file_format} file processed successfully")
                 st.write("You can chat now!")
